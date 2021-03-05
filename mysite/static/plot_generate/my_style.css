@@ -1,0 +1,13 @@
+
+.title{
+    min-width: 300px;
+    margin: 10px auto;
+    color: red;
+} 
+
+.block{
+    max-width: 800px;
+    margin: 10px auto;
+    color: black;
+    border: 1px solid black;
+}
