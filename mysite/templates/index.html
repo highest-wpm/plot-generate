@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<title>Plot and Generate</title>
+	<link href="{% static 'plot_generate/my_style.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="title">
+        <h1 class="color-blue"> Plot and Generate </h1>
+        <p class=""> Offer a plot for the GAN model, let model generate a image base on that. </p>
+    </div>
+
+    {% block plot_generate %}
+       plot_generate 
+    {% endblock%}
+
+</body>
+</html>

@@ -1,4 +1,5 @@
-"""mysite URL Configuration
+"""
+mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -13,15 +14,31 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 
-# include static directory
+# Include static directory
 from django.conf.urls.static import static
 from django.conf import settings
 
+# rest app
+from rest_framework import routers
+from restapi import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+
+
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('plot_generate.urls'))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+    path('database-admin/', admin.site.urls),
+
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # static files no longer needed since we use rest django framework
+
 

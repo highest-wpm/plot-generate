@@ -1,12 +1,20 @@
 
 .title{
-    min-width: 300px;
-    margin: 10px auto;
-    color: red;
+    margin: auto;
+    max-width: 800px;
 } 
+
+.color-blue{
+    color: blue;
+}
+
+.color-red{
+    color: red;
+}
 
 .block{
     max-width: 800px;
+    height: 300px;
     margin: 10px auto;
     color: black;
     border: 1px solid black;
